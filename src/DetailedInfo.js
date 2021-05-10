@@ -1,5 +1,5 @@
 function DetailedInfo({data}){
-    console.log('test', data);
+ 
 
     const getHour = time => time ? new Date(time).getHours() : new Date().getHours();
     const getDate = date => date ? new Date(date).getDate() : new Date().getDate();

@@ -4,7 +4,6 @@
 import DetailedInfo from './DetailedInfo';
 function Forecast({data}){
     const { city, list } = data;
-    console.log('forecast',city,list); 
 
 
    const groupByDays = data => {
@@ -18,7 +17,6 @@ function Forecast({data}){
       };
       const tiles = Object.values(groupByDays(list));
     const forecastTiles = tiles.length > 5 ? tiles.slice(0, 5) : tiles;
-    console.log('test tiles',forecastTiles);
 
       // Returns week of the day
       const elementsRef = useRef(forecastTiles.map((item,index) => createRef(`div-${index}`)));
@@ -26,8 +24,6 @@ function Forecast({data}){
         const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
         const date =new Date();
         let weekday = new Date(data[0].dt * 1000).toLocaleString('en-us', {weekday:'long'});
-console.log('Weekday',weekday);
-        console.log('date test',date, date.getDay(),daysOfWeek[date.getDay()])
         return weekday;
       };
     

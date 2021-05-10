@@ -10,7 +10,7 @@ import {
   faSmog,
 } from '@fortawesome/free-solid-svg-icons';
 function Weather({data}){
- console.log('props',data);
+
  const {
     city,
     country,

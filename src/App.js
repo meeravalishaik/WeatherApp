@@ -71,7 +71,6 @@ const getSearchData =  (search)=>{
         navigator.geolocation.getCurrentPosition((position) => {
           resolve(position.coords);
         }, (error) => {
-          console.log('error',error);
           if(error.code === error.PERMISSION_DENIED) {
             setLocation(false);
             console.error("Error detecting location.");
@@ -116,14 +115,12 @@ const getSearchData =  (search)=>{
   
   }, [lat,long])
   const onSearch=(event)=>{
-console.log('test',searchBar.current.value);
 //  searchBar.current.value===''?setErrorShow(false):setErrorShow(true);
  if(searchBar.current.value!=='')
 {
   getSearchData(searchBar.current.value).then(async response=>{
   const weatherResponse = await response[0].json();
   const foreCastResponse = await response[1].json();
-  console.log(response[0].status,response[1].status);
   
   if(response[0].status === 200){
     if(error){
@@ -147,8 +144,6 @@ console.log('test',searchBar.current.value);
     setError(true);
   }
   
-
-  console.log('city test',city,weatherData);
 }).catch((err)=>{
     console.log('error search',err);
     throw err;
@@ -160,7 +155,6 @@ console.log('test',searchBar.current.value);
   }
   const onChangeSearch=(event)=>{
     setCity(event.target.value);
-    console.log('test',event.target.value);
 
       }
   return (

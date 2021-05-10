@@ -141,3 +141,16 @@ margin:0.2em auto;
         font-size: 120px;
       }
        }
+       @supports (-webkit-touch-callout: none) {
+        /* CSS specific to iOS devices */ 
+        @media screen and (max-width: 768px) and (min-width: 300px) {
+          #search{
+            top:20%
+           }
+           .search-div{
+             top:26%;
+           }
+        }
+      }
+      
+    
