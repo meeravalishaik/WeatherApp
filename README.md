@@ -36,10 +36,7 @@ npm run build
 
 ```
 
-#### Notes:
 
-- Unit testing can be done manually by executing the above command.
-- It will be done automatically prior committing the updates to the repo as a pre-commit hook.
 
 ### TODOs
 
